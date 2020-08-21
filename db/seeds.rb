@@ -10,8 +10,8 @@
 User.destroy_all
 
 
-User.create(name: 'Chinomnso', handle: '@awazie', city: 'New York', state: 'New York', country: 'United States')
-User.create(name: 'Obiora', handle: '@awazie', city: 'New York', state: 'New York', country: 'United States')
+User.create(name: 'Chinomnso', handle: '@awazie', city: 'New York', state: 'New York', country: 'United States', password_digest:  BCrypt::Password.create("password"))
+User.create(name: 'Obiora', handle: '@awazie', city: 'New York', state: 'New York', country: 'United States', password_digest:  BCrypt::Password.create("password"))
 
 
 puts '============================'

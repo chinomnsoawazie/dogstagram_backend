@@ -37,27 +37,33 @@ ActiveRecord::Schema.define(version: 2020_08_19_193928) do
   end
 
   create_table "comments", force: :cascade do |t|
+    t.bigint "dog_id", null: false
     t.string "username"
     t.string "text"
     t.integer "commenter_user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["dog_id"], name: "index_comments_on_dog_id"
   end
 
   create_table "dogs", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.string "name"
     t.string "breed"
     t.integer "age"
     t.string "temprament"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
+    t.bigint "dog_id", null: false
     t.string "likerName"
     t.integer "liker_user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["dog_id"], name: "index_likes_on_dog_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,4 +77,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_193928) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "dogs"
+  add_foreign_key "dogs", "users"
+  add_foreign_key "likes", "dogs"
 end
