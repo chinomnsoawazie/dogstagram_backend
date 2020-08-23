@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     has_secure_password
-    validates :username, uniqueness: { case_sensitive: false }
+    validates :handle, uniqueness: { case_sensitive: false }
 
     has_many :dogs
     has_many :followers

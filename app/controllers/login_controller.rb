@@ -1,7 +1,10 @@
 class LoginController < ApplicationController
+    skip_before_action :authorized
+
 
     def create
-      user = User.find_by(username: user_params[:username])
+      # byebug
+      user = User.find_by(handle: user_params[:handle])
       if user && user.authenticate(user_params[:password])
         render json: {token: token(user.id), user: UserSerializer.new(user)}
       else
@@ -16,6 +19,6 @@ class LoginController < ApplicationController
     end
 
     def user_params
-      params.permit(:username, :password)
+      params.permit(:handle, :password)
     end
 end

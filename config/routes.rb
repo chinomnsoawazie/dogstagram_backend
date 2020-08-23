@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :comments
   resources :likes
   resources :followers
-  post '/login', to: 'login#create'
+  # resources :login
+  post 'login', to: 'login#create'
   get 'apikeys', :to => 'users#api_keys'
   get 'users/checkhandle/:username', :to => 'users#check_handle'
 
