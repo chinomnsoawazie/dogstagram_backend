@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   skip_before_action :authorized, only: [:create]
 
   def index
@@ -17,8 +17,9 @@ class UserController < ApplicationController
 
   def api_keys
     firebaseAPI = ENV["FIREBASE_API_KEY"]
+    # byebug
     myEmail = ENV["MY_EMAIL"]
-    render json: {FIREBASE_API_KEY: fireBaseAPI, myEmail: myEmail }
+    render json: {FIREBASE_API_KEY: firebaseAPI, myEmail: myEmail }
   end
 
   def show

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_193928) do
+ActiveRecord::Schema.define(version: 2020_08_21_004026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_193928) do
 
   create_table "comments", force: :cascade do |t|
     t.bigint "dog_id", null: false
-    t.string "username"
+    t.string "handle"
     t.string "text"
     t.integer "commenter_user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -57,9 +57,19 @@ ActiveRecord::Schema.define(version: 2020_08_19_193928) do
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
+  create_table "followers", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name"
+    t.string "handle"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_followers_on_user_id"
+  end
+
   create_table "likes", force: :cascade do |t|
     t.bigint "dog_id", null: false
     t.string "likerName"
+    t.string "likerHandle"
     t.integer "liker_user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -72,6 +82,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_193928) do
     t.string "city"
     t.string "state"
     t.string "country"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -79,5 +90,6 @@ ActiveRecord::Schema.define(version: 2020_08_19_193928) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "dogs"
   add_foreign_key "dogs", "users"
+  add_foreign_key "followers", "users"
   add_foreign_key "likes", "dogs"
 end

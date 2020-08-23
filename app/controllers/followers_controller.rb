@@ -1,4 +1,4 @@
-class FollowerController < ApplicationController
+class FollowersController < ApplicationController
 
     def create
         follow = Follower.create(follow_params)
@@ -27,6 +27,6 @@ class FollowerController < ApplicationController
 
     private
     def follow_params
-        params.permit(:id, :name :handle, :user_id)
+        params.permit(:id, :name, :handle, :user_id)
     end
 end

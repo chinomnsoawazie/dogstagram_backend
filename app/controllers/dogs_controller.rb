@@ -1,4 +1,4 @@
-class DogController < ApplicationController
+class DogsController < ApplicationController
 
   def create
     @dog = Dog.create!(dog_params)
