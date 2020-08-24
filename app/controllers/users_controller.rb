@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   def check_handle
     handle_to_check = User.find_by(handle: params[:handle])
     if handle_to_check
-      render json: 'handle not available'
+      render json: false
     else
-      render json: 'handle available'
+      render json: true
     end
   end
 

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # resources :login
   post 'login', to: 'login#create'
   get 'apikeys', :to => 'users#api_keys'
-  get 'users/checkhandle/:username', :to => 'users#check_handle'
+  get 'users/checkhandle/:handle', :to => 'users#check_handle'
 
 
 end
