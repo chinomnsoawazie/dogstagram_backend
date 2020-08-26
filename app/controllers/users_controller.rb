@@ -29,13 +29,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create!(user_params)
-    if @user.valid?
-        @token = encode_token(user_id: @user.id)
-        render json: { user: UserSerializer.new(@user), token: @token }, status: :created
-      else
-        render json: { error: 'failed to create user' }, status: :not_acceptable
+    @user = User.new(user_params)
+    @user.photo.attach(io: photo_io, filename: photo_name)
+    
+    unless @user.save
+      puts @user.errors.inspect
+      render json: { error: "Unable to create user" }, status: 422
     end
+
+    @token = encode_token(user_id: @user.id)
+    render json: { user: UserSerializer.new(@user), token: @token }, status: :created
   end
 
 
@@ -43,7 +46,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     if user.update(user_params)
       token = encode_token(user_id: user.id)
-      render json: { user: UserSerializer.new(user), token: token }
+      render json: { user: user, token: token }
     else
       render json: user.errors, status: :unprocessable_entity
     end
@@ -57,5 +60,14 @@ class UsersController < ApplicationController
   private
   def user_params
     params.permit(:id, :name, :handle, :city, :state, :country, :password, :photo)
+  end
+
+  def photo_io
+    decoded_photo = Base64.decode64(params[:photo])
+    StringIO.new(decoded_photo)
+  end
+
+  def photo_name
+    params[:file_name]
   end
 end
