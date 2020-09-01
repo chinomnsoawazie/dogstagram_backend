@@ -4,8 +4,8 @@ class LoginController < ApplicationController
 
     def create
       # byebug
-      user = User.find_by(handle: user_params[:handle])
-      if user && user.authenticate(user_params[:password])
+      user = User.find_by(handle: params[:handle])
+      if user && user.authenticate(params[:password])
         render json: {token: token(user.id), user: UserSerializer.new(user)}
       else
         render json: { errors: [ "User not found" ] }, status: :unprocessable_entity
