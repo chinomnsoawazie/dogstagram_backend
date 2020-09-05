@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_08_21_004026) do
     t.string "name"
     t.string "breed"
     t.integer "age"
-    t.string "temprament"
+    t.string "temparament"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_dogs_on_user_id"

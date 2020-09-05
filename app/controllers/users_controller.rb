@@ -17,7 +17,6 @@ class UsersController < ApplicationController
 
   def api_keys
     firebaseAPI = ENV["FIREBASE_API_KEY"]
-    # byebug
     myEmail = ENV["MY_EMAIL"]
     render json: {FIREBASE_API_KEY: firebaseAPI, myEmail: myEmail }
   end
@@ -27,6 +26,8 @@ class UsersController < ApplicationController
     user = User.find(user_id)
     render json: user
   end
+
+
 
   def create
     @user = User.new(user_params)
