@@ -22,9 +22,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    user_id = params[:id]
-    user = User.find(user_id)
+    user = User.find_by(handle: params[:handle])
     render json: user
+  end
+
+  def findUsers
+    searchTerm = params[:searchTerm]
+    foundUsers = User.where("handle like ?", "%#{searchTerm}%").map{ |user| UserSerializer.new(user)}
+    render json: {searchResponse: foundUsers}
   end
 
 
@@ -32,14 +37,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.photo.attach(io: photo_io, filename: photo_name)
-    
     unless @user.save
       puts @user.errors.inspect
       render json: { error: "Unable to create user" }, status: 422
     end
-
-    @token = encode_token(user_id: @user.id)
-    render json: { user: UserSerializer.new(@user), token: @token }, status: :created
+    # byebug
+    render json: { user: UserSerializer.new(@user), token: token(@user.id) }, status: :created
   end
 
 
@@ -60,7 +63,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.permit(:id, :name, :handle, :city, :state, :country, :password, :photo)
+    params.permit(:id, :name, :handle, :city, :state, :country, :password, :searchTerm, :photo)
   end
 
   def photo_io
