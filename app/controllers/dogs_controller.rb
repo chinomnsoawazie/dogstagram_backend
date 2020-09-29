@@ -3,10 +3,10 @@ class DogsController < ApplicationController
   def create
     @dog = Dog.create!(dog_params)
     user_id = params[:user_id]
-    user = Dog.find(user_id)
+    user = User.find(user_id)
+    # byebug
     if @dog.valid?
-        userDogs = user.dogs.map{ |dog| DogSerializer.new(dog)}
-        render json: { userDogs: userDogs }, status: :created
+        render json: {token: token(user.id), user: UserSerializer.new(user)}, status: :created
       else
         render json: { error: 'failed to create dog' }, status: :not_acceptable
     end
@@ -33,6 +33,6 @@ class DogsController < ApplicationController
 
   private
   def dog_params
-    params.permit(:id, :name, :breed, :user_id, :age, :temprament, :photo)
+    params.permit(:id, :name, :breed, :user_id, :age, :temparament)
   end
 end

@@ -4,10 +4,10 @@ one:
   name: MyString
   breed: MyString
   age: 1
-  temprament: MyString
+  temparament: MyString
 
 two:
   name: MyString
   breed: MyString
   age: 1
-  temprament: MyString
+  temparament: MyString
