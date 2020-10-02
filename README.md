@@ -6,8 +6,6 @@
 
 <p align="center"> <img src="https://img.shields.io/badge/-Technologies%20Used-blue" style="max-width:50%;"> </p>
 
-<p align="center"> <img src="https://img.shields.io/badge/-Technologies%20Used-blue" style="max-width:50%;"> </p>
-
 <p align="center">
   <img src="https://img.shields.io/badge/Ruby-2.7.0-red" style="max-width:50%;">
   <img src="https://img.shields.io/badge/PostgreSQL-12.1-orange" style="max-width:50%;">
@@ -18,7 +16,6 @@
   <img src="https://img.shields.io/badge/JWT-1.5.4-red" style="max-width:50%;">
  </p>
   
- <p align="center"> <img src="https://img.shields.io/badge/-Notices-blue" style="max-width:50%;"> </p>
    
  <p align="center"> 
   <a target="blank" rel="noopener noreferrer" href="https://github.com/chinomnsoawazie/dogstagram-frontend-mobile">
@@ -26,7 +23,6 @@
   </a>
 </p>
   
- <p align="center"> <img src="https://img.shields.io/badge/-Notices-blue" style="max-width:50%;"> </p> 
  <p align="center"> 
    <img src="https://img.shields.io/badge/Status-Making%20commercial%20version-brightgreen" style="max-width:50%;">
 </p>
