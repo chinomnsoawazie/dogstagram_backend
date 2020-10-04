@@ -48,7 +48,7 @@
     <li><a href="#installation">Installation</a>
       <ul>
           <li><a href="#prerequisites">Prerequisites</a></li>
-          <li><a href="#frontend-installation">Frontend installation</a></li>
+          <li><a href="#backend-installation">Backend installation</a></li>
           <li><a href="#first-start">First start</a></li>
       </ul>
     </li>   
@@ -127,57 +127,37 @@
    <h2 id="prerequisites">Prerequisites</h2>
       <p>AfroPanTrack frontend is biult with React(^16.12.0), Axios(^0.19.1), google maps react(^2.0.2"), react google maps(^9.4.5), redux(^4.0.5), and redux thunk(^2.3.0). Ensure you have installed these packages with the specified versions or newer ones before cloning this repo. You can find their official installation guides below;
  <ul>
-  <li><a href="https://reactjs.org/docs/getting-started.html#create-a-new-react-app">React</a></li>
-  <li><a href="https://reactnative.dev/">React Native</a></li>
-  <li><a href="https://www.npmjs.com/package/@react-native-firebase/app">React Native Firebase App</a></li>
-  <li><a href="https://www.npmjs.com/package/axios">Axios</a></li>
-  <li><a href="https://www.npmjs.com/package/@eva-design/eva">Eva Design</a></li>
-  <li><a href="https://www.npmjs.com/package/@react-native-community/masked-view">React Native Community Masked View</a></li>
-  <li><a href="https://www.npmjs.com/package/redux">Redux</a></li>
-  <li><a href="https://www.npmjs.com/package/redux-thunk">Redux Thunk</a></li>
-  
-  <li><a href="https://www.npmjs.com/package/@react-native-community/picker">React Native Community Picker</a></li>
-  <li><a href="https://www.npmjs.com/package/@react-native-firebase/database">React Native Firebase Database</a></li>
-  <li><a href="https://www.npmjs.com/package/@react-navigation/native">React Native Navigation</a></li>
-  <li><a href="https://www.npmjs.com/package/react-navigation-stack">React Navigation Stack</a></li>
-  <li><a href="https://www.npmjs.com/package/@ui-kitten/eva-icons">RUI Kitten Eva Icons</a></li>
-  <li><a href="https://www.npmjs.com/package/react-native-gesture-handler">React Native Gesture Handler</a></li>
-  <li><a href="https://www.npmjs.com/package/react-native-get-random-values">React Native Get Random Values</a></li>
-  <li><a href="https://www.npmjs.com/package/react-native-image-picker">React Native Image Picker</a></li>
-  <li><a href="https://www.npmjs.com/package/react-native-picker-select/v/6.3.4">React Native Picker Select</a></li>
-  <li><a href="https://www.npmjs.com/package/react-native-reanimated">React Native Reanimated</a></li>
-  <li><a href="https://www.npmjs.com/package/react-native-safe-area-context?activeTab=versions">React Native Safe Area Context</a></li>
-  <li><a href="https://www.npmjs.com/package/react-native-screens">React Native Screens</a></li>
-  <li><a href="https://www.npmjs.com/package/react-native-svg">React Natvie SVG</a></li>
-  <li><a href="https://www.npmjs.com/package/react-native-ui-kitten">React Native UI Kittenk</a></li>
-  <li><a href="https://www.npmjs.com/package/react-navigation">React Navigation</a></li>
-  <li><a href="https://www.npmjs.com/package/react-navigation-tabs">React Navigation Tabs</a></li>
-  <li><a href="https://www.npmjs.com/package/uuid">UUID</a></li>
+
  </ul>
 </p>
 
-  <h2 id="frontend-installation">Frontend installation</h2>
-<p>To install the front end of DogStagram, do the following;
- <ul>
-  <li>Clone the <a href="https://github.com/chinomnsoawazie/dogstagram-frontweb-mobile">Frontend</a></li>
-  <li>Ensure all relevant packages from the prerequisites section above are installed by running <code>yarn add "package-name"</code> from your terminal</li>
-  <li>Follow the instructions from <a href="https://rnfirebase.io/">React Native Firebase</a> documentation to properly set up your Firebase parameters </li>
-  <li>Then run  <code>cd ios && pod install && cd ..</code> from your terminal. This installs the necesary pods</li>
-  <li>Then run  <code>cd android && ./gradlew clean</code> from your terminal. This will set up required parameters for the android version of the app and you'll likely have to fix ensuing issues</li>
-    <li>Then run  <code>./gradlew signingReport && ./gradlew app:assembleRelease</code> from your terminal. This is to ensure you have a clean slate of working build ofthe android version of the app and you'll likely have to fix ensuing issues</li>
-  <ul>
-   <h6>To run the andriod version</h6>
-      <li>To run the android version, run  <code>adb devices</code> from your terminal to see available devices/emulators. If none is seen, you might need to properly set up android studio parameters. You'll likely have to fix ensuing issues</li>
-        <li>Then run  <code>  npx react-native run-android</code> from your terminal to launch the emulator or create a biuld that can be installed on an android phone</li>
-  </ul>
+  <h2 id="backend-installation">Backend installation</h2>
+  <p>FindStation backend is biult with Ruby(2.7.0), Rails(^6.0.2), PostgreSQL(0.18) for PostgreSQL 12.1, Bcrypt(^3.1.7), Image processing(^1.2) from Active Storage, JWT, Active model serializer(^0.10.0), and Dotenv-rails(^2.7). 
   
-  <ul>
-    <h6>To run the iOS version</h6>
-    <li>Open the project's workspace in Xcode  and click run. You'll likely have to fix ensuing issues</li>
-    <li>If the biuld passes and there is a connected phone, the app will be installed on the phone. You might need to approve permision for the app to run on your phone</li>
-  </ul>
-  
-  <li>Head over to <a href="https://github.com/chinomnsoawazie/dogstagram_backend">Backend</a> and follow the instructions to build/install the backend API</li>
+ <ul> 
+  <li>Clone <a href="https://github.com/chinomnsoawazie/dogstagram_backend">Dogstagram backend</a>
+    <ul>
+      <li>Ensure you have these uncommented or added in your gemfile before running <code>bundle install</code>
+      <ul>
+         <li><code>gem 'jwt'</code></li>
+         <li><code>gem 'active_model_serializers', '~> 0.10.0'</code></li>
+         <li><code>gem "dotenv-rails", "~> 2.7"</code></li>
+         <li><code>gem 'bcrypt', '~> 3.1.7'</code></li>
+         <li><code>gem 'image_processing', '~> 1.2'</code></li>
+         <li><code>gem 'pg', '>= 0.18'</code></li>
+         <li><code>gem 'rails', '~> 6.0.2'</code></li>
+         <li><code>ruby '2.7.0'</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>In your terminal, run <code>rvm use ruby-2.7.0</code> to make sure you are using the correct Ruby version(this assumes you already had Ruby 2.7.0 installed)</li>
+  <li>Run <code>bundle install</code> to install all gems/dependancies required for FindStation</li>
+  <li>Run <code>rails db:create</code> to create a local PostgresQL database</li>
+  <li>Run <code>rails db:migrate</code>to create the tables/columns required for proper FindStation functionality</li>
+  <li>Create a file called .env in the backend directory (/station_locate_backend/) and add HMAC_SECRET = "<insert a secret string here>"(this is for your JWT token), NREL_API_KEY= "<insert API Token you were issued by National Renewable Energy Laboratory>", and GOOGLE_MAPS_API_KEY= "<insert API Token you were issued by Google maps API>" to the file</li>
+   <li>Head over to  the <a href="https://github.com/chinomnsoawazie/station-locate-frontend/blob/master/README.md#frontend-installation">frontend</a> for instructions on how to install the frontend</li>
+
  </ul>
 </p>
 
@@ -186,10 +166,6 @@
  
 <a href="#table-of-contents"> <img src="https://img.shields.io/badge/-Back%20To%20Table%20of%20Contents-lightgrey" style="max-width:50%;"></a>
 
-
-  
-  
-  
   <h1 id="credits">Credits</h1>
     <p>
  <ul>
