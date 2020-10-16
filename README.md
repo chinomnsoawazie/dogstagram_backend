@@ -147,6 +147,8 @@
          <li><code>gem 'pg', '>= 0.18'</code></li>
          <li><code>gem 'rails', '~> 6.0.2'</code></li>
          <li><code>ruby '2.7.0'</code></li>
+         <li><code>gem 'aws-sdk-s3'</code></li>
+         <li><code>gem 'rack-cors'</code></li>
         </ul>
       </li>
     </ul>
@@ -155,7 +157,7 @@
   <li>Run <code>bundle install</code> to install all gems/dependancies required for FindStation</li>
   <li>Run <code>rails db:create</code> to create a local PostgresQL database</li>
   <li>Run <code>rails db:migrate</code>to create the tables/columns required for proper FindStation functionality</li>
-  <li>Create a file called .env in the backend directory (/station_locate_backend/) and add HMAC_SECRET = "<insert a secret string here>"(this is for your JWT token), NREL_API_KEY= "<insert API Token you were issued by National Renewable Energy Laboratory>", and GOOGLE_MAPS_API_KEY= "<insert API Token you were issued by Google maps API>" to the file</li>
+  <li>Create a file called .env in the backend directory (/station_locate_backend/) and add HMAC_SECRET = "<insert a secret string here>"(this is for your JWT token) to the file</li>
    <li>Head over to  the <a href="https://github.com/chinomnsoawazie/station-locate-frontend/blob/master/README.md#frontend-installation">frontend</a> for instructions on how to install the frontend</li>
 
  </ul>
