@@ -168,6 +168,23 @@
  
 <a href="#table-of-contents"> <img src="https://img.shields.io/badge/-Back%20To%20Table%20of%20Contents-lightgrey" style="max-width:50%;"></a>
 
+
+
+ <h1 id="planned-improvements">Planned improvements</h1>
+    <p>  Some of the planned improvements include;
+
+ <ul>
+  <li>Adding IBM Watson to add AI capabilities for registered(those that created accounts) user behaviours</li>
+  <li>Implement OAuth 2.0 to enable logging in using social media accounts</li>
+   <li>Integrate app with device programs like calenders, alarms, reminders, etc</li>
+ <li>Make a commercial version</li>
+
+ </ul>
+</p>
+
+<a href="#table-of-contents"> <img src="https://img.shields.io/badge/-Back%20To%20Table%20of%20Contents-lightgrey" style="max-width:50%;"></a>
+
+
   <h1 id="credits">Credits</h1>
     <p>
  <ul>
