@@ -203,8 +203,6 @@
   <li><a href="https://rubygems.org/gems/bcrypt/versions/3.1.7">Bcrypt</a></li>
   <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   <li><a href="https://aws.amazon.com/s3/">AWS S3</a></li>
-  <li><a href="https://firebase.google.com/docs/database">Firebase Realtime Database</a></li>
-  <li><a href="https://reactnative.dev/">React Native</a></li>
  </ul>
 </p>
 
