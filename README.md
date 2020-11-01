@@ -169,6 +169,26 @@
 <a href="#table-of-contents"> <img src="https://img.shields.io/badge/-Back%20To%20Table%20of%20Contents-lightgrey" style="max-width:50%;"></a>
 
 <h1 id="summary-of-files">Summary of files</h1>
+
+   <h2 id="internal-file-structure">Internal file structure</h2>
+    <p>
+ <ul>
+  <li><a href="https://github.com/chinomnsoawazie/dogstagram_backend/tree/master/app">App:</a> Primary location for backend API configuration
+    <ul>
+      <li><a href="https://github.com/chinomnsoawazie/dogstagram_backend/tree/master/app/controllers">controllers:</a> Render/RESTful/CRUD methods that carry our actoins including authorizations, checks, etc</li>
+       <li><a href="https://github.com/chinomnsoawazie/dogstagram_backend/tree/master/app/serializers">serializers:</a>Filters for the backend API</li>
+        <li><a href="https://github.com/chinomnsoawazie/dogstagram_backend/tree/master/app/models">models:</a>Active Record Associations/Validation methods</li>
+    </ul>
+   
+   </li>
+   <li><a href="https://github.com/chinomnsoawazie/dogstagram_backend/tree/master/config"> config:</a> Start/Backend configuration files for routes, image processing, etc</li>
+  <li><a href="https://github.com/chinomnsoawazie/dogstagram_backend/tree/master/db"> db:</a> Database configuration files</li>
+  <li><a href="https://github.com/chinomnsoawazie/dogstagram_backend/blob/master/Gemfilee"> Gemfile:</a> Prerquisites and dependencies</li>
+</ul>
+</p>
+
+<a href="#table-of-contents"> <img src="https://img.shields.io/badge/-Back%20To%20Table%20of%20Contents-lightgrey" style="max-width:50%;"></a>
+
    <h2 id="external-dataset">External datatset</h2>
     <p>
  <ul>
